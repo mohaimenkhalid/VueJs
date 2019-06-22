@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Js</title>
+	
+</head>
+
+<body>
+
+	<div id="root">
+		<h1>{{ name | lower | upper }}</h1>
+		<h1>{{ profession | upper }}</h1>
+		<h1>{{ today| format }}</h1>
+		
+		
+
+
+		
+
+		
+	</div>
+
+
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+
+	//Global
+
+	Vue.filter("lower", function(s){
+		return s.toLowerCase();
+	});
+
+	Vue.filter("format", function(s){
+		return s.getUTCDate() + "-" + (s.getUTCMonth()+1) + "-" + s.getUTCFullYear();
+	});
+
+	var app = new Vue({
+		el: "#root",
+		data: {
+
+			name: "Mohaimen Khalid",
+			profession: "Softwere Engineer",
+			today: new Date()
+		},
+
+		filters: {
+
+			upper: function(s){
+				return s.toUpperCase();
+			}
+
+		}
+
+		});
+
+
+</script>
+</body>
+</html>

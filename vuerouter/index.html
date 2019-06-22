@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Js</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+	
+
+		.foo{
+			background: #ACE371;
+			text-align: center;
+			width: 960px;
+			margin: 44px auto;
+			min-height: 222px;
+		}
+
+		.bar-enter-active, .bar-leave-active {
+		  transition: margin-top 1s
+		}
+		.bar-enter  {
+		  margin-top: 100px;
+		}
+
+		.bar-leave-to  {
+		   margin-top: -555px;
+		}
+
+		.main{
+			position: absolute;
+			width: 100%;
+
+		}
+
+		ul.menu{
+			list-style: none;
+			width: 960px;
+			margin: auto;
+			background: #1A6AA1;
+			color: #fff;
+		}
+
+		ul.menu li{
+			display: inline;
+		}
+
+		ul.menu li a{
+			color: #fff;
+			display: inline-block;
+			padding: 5px;
+			text-decoration: none;			
+		}
+		ul.menu li a.router-link-active, ul.menu li a:hover{
+			background: #BE4001;
+		}
+
+
+	</style>
+	
+</head>
+
+<body>
+
+	<div id="root">
+
+			<ul class="menu">
+				<li> <a href="home"> Home </a></li>
+				<li> <a href="about">About </a> </li>
+				<li> <a href="contact"> Contact </a></li>
+			</ul>
+
+			<br>
+
+			<ul class="menu">
+				<li> <router-link to="/home">Home</router-link> </li>
+				<li> <router-link to="/about">About</router-link> </li>
+				<li> <router-link to="/contact">Contact</router-link> </li>
+				
+			</ul>
+
+		<transition name="bar">
+			<router-view></router-view>
+		</transition>
+
+	</div>
+
+
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript" src="vue-router.js"></script>
+<script type="text/javascript">
+	var Home = {
+		template: `
+			<div class="main">
+			<div class="foo">
+				<h1>Home</h1>
+				<p>Home page content showing..</p>
+			</div>
+		</div>
+		`
+	};
+
+	var About = {
+		template: `
+			<div class="main">
+			<div class="foo">
+				<h1>About</h1>
+				<p>About page content showing..</p>
+			</div>
+		</div>
+		`
+	};
+
+	var Contact = {
+		template: `
+			<div class="main">
+			<div class="foo">
+				<h1>Contact</h1>
+				<p>Contact page content showing..</p>
+			</div>
+		</div>
+		`
+	};
+
+	var routes = [
+
+		{path: '/', component: Home},
+		{path: '/home', component: Home},
+		{path: '/about', component: About},
+		{path: '/contact', component: Contact}
+	];
+
+	var router = new VueRouter({
+
+		routes: routes,
+		mode: 'history',
+		base: '/vuejs/vuerouter'
+	});
+
+	var app = new Vue({
+		
+		router: router
+	}).$mount("#root");
+
+</script>
+</body>
+</html>

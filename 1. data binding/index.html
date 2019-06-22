@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Js</title>
+</head>
+<body>
+
+	<div id="root">
+		<p>Enter Your Name</p>
+		<input type="text" v-model="name">
+		<br>
+		<h3>Your Name is: {{ name }}</h3>
+	</div>
+
+
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+
+		el: "#root",
+		data: {
+			name: "Khalid"
+		},
+		mounted: function(){
+			console.log("mounted");
+		}
+	});
+
+
+</script>
+</body>
+</html>

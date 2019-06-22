@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Js</title>
+	<link rel="stylesheet" type="text/css" href="style1.css">
+	
+</head>
+
+<body>
+
+	<div id="root">
+
+		<tabs>
+			<tab name="Tab1" selected="true">
+				Tab1 Content... <button>Button1</button>
+			</tab>
+
+			<tab name="Tab2">
+				Tab2 Content...
+			</tab>
+
+			<tab name="Tab3">
+				Tab3 Content... 
+			</tab>
+
+			<tab name="Tab4">
+				Tab4 Content... 
+			</tab>
+
+			<tab name="Tab5">
+				Tab5 Content... 
+			</tab>
+		</tabs>
+		
+	</div>
+
+
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript" src="component.js"></script>
+<script type="text/javascript">
+
+	
+	var app = new Vue({
+		el: "#root",
+		data: {
+
+				
+		}
+
+		});
+
+
+</script>
+</body>
+</html>

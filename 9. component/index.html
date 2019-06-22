@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Js</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
+
+<body>
+
+	<div id="root">
+
+		
+		<panel title="This is panel title" >
+			<h1>Enter Your Name</h1>
+			<input type="" name="">
+			<button>Submit</button>
+		
+		</panel>
+		
+		
+	</div>
+
+
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+
+
+	Vue.component("panel", {
+
+		template: `
+
+		<div class="panel" v-if="show">
+
+			<div class="panelTitle" >
+				<div class="close" @click="show = false"> Close </div>
+					{{ title }}
+			</div>
+
+			<div class="panelContent">
+
+				<slot></slot>			
+			</div>				
+		</div>
+
+		`,
+
+		props: ["title", "content"],
+
+		data: function(){
+			return {
+
+				show: true
+
+			}
+		}
+		
+	});
+
+	
+	var app = new Vue({
+		el: "#root",
+		data: {
+
+			
+		}
+
+		});
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Js</title>
+	
+</head>
+
+<body>
+
+	<div id="root">
+		
+		<ul>
+			<li>
+				<p v-if="show">
+					showing...
+				</p>
+
+				<p v-else>
+					Not showing...
+				</p>
+			</li>
+		</ul>
+	</div>
+
+
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+
+		el: "#root",
+		data: {
+
+			show: false
+			
+		}
+	});
+
+
+</script>
+</body>
+</html>

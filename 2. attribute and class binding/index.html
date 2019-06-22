@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Js</title>
+
+	<style>
+		ul{list-style: none}
+		li{ display: inline; }
+
+		.active{ background-color: #0B78A0; color: #fff; padding: 5px; }
+	</style>
+</head>
+
+<body>
+
+	<div id="root">
+		
+		<ul>
+			<li>
+				<a :class="{ 'active': activeLink == 'link1'  }" :href="link1.url" v-bind:title="link1.title">{{ link1.text }}</a>
+				 <!--  we can use attribute bind use v-bind or : -->
+			</li>
+
+			<li>
+				<a :class="{ 'active': activeLink == 'link2'  }" :href="link2.url" :title="link2.title">{{ link2.text }}</a> 
+			</li>
+		</ul>
+
+	<p v-html="html">	{{ html }}</p>
+	</div>
+
+
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+
+		el: "#root",
+		data: {
+			link1: { //link1 = property
+				text: "Facebook", title: "Go to FaceBook", url: "http://facebook.com" 
+			},
+
+			link2: {
+				text: "Youtube", title: "Go to Youtube", url: "http://youtube.com"
+			},
+
+			activeLink: "link1",
+
+			html: "<a href='http://google.com' title='google'>Google</a>"
+		}
+	});
+
+
+</script>
+</body>
+</html>

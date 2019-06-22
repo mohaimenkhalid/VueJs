@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Js</title>
+	<link rel="stylesheet" type="text/css" href="style1.css">
+	<style type="text/css">
+		
+
+
+	</style>
+	
+</head>
+
+<body>
+
+	<div id="root">
+	
+		<button  v-on:click="getposts()">Call External API</button>	
+
+		<div v-for="post in posts">
+			<h2>{{post.title}}</h2>
+			<p>{{post.body}}</p>
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript" src="axios.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+
+		el: "#root",
+		data: {
+				posts: []
+			
+		},
+		methods: {
+			getposts:function(){
+				var cuttentapp = this;
+				axios.get("http://jsonplaceholder.typicode.com/posts")
+				.then(function(res){
+					cuttentapp.posts= res.data;
+				});
+			}
+		}
+	});
+
+
+</script>
+</body>
+</html>

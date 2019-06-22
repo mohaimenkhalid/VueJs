@@ -1,0 +1,101 @@
+body{
+	background: #e3e3e3;
+}
+.panel{
+	width: 960px;
+	margin: 44px auto;
+	border: 1px solid #c5c0c0;
+	background: #EEEEEE;
+}
+
+.panelTitle{
+	background: #D1D1D1;
+	font-weight: bold;
+	padding: 9px;
+	color: #505050;
+}
+
+.panelContent{
+	padding: 22px;
+	background: #fff;			
+	min-height: 111px;
+}
+
+.close{
+	float: right;
+	cursor: pointer;
+	padding: 0 9px;
+}
+.close:hover{
+	background: #C85454;
+}
+
+
+
+.modal{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0, 0.5);
+}
+
+.modalContent{
+	width: 960px;
+	background: #fff;
+	margin-top: 99px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.modalHeader{
+	background: #efefef;
+	font-weight: bold;
+	padding: 16px 9px;
+	color: #505050;
+}
+
+.modalBody{
+	padding: 22px;
+	background: #fff;			
+	min-height: 222px;
+}
+
+.modalFooter{
+	background: #D1D1D1;
+	font-weight: bold;
+	padding: 9px;
+	color: #505050;
+}
+
+
+/*===============Tab===============*/
+.tab{
+	border: 1px solid #4C4C4C;
+	width: 960px;
+	min-height: 111px;
+	background: #FFFFFF;
+	margin: 44px auto;
+}
+
+.tab ul{
+	margin: 0;
+	list-style: none;
+	background: #B5B5B5;
+}
+
+.tab li{
+	display: inline-block;
+	cursor: pointer;
+	padding: 9px;
+	margin-top: 9px;
+}
+
+.tab li.active{
+	background: #FFFFFF;
+}
+
+.details{
+	padding: 44px;
+}
